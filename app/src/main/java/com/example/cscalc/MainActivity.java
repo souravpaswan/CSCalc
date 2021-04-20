@@ -326,7 +326,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     String s = val;
                     char ch = s.charAt(s.length() - 1);
-                    if (ch == '+' || ch == '-' || ch == '%' || ch == '*' || ch == '/' || ch=='.')
+                    if (ch == '+' || ch == '−' || ch == '%' || ch == '×' || ch == '÷' || ch=='.')
                     {
                         Toast.makeText(getApplicationContext(), "Invalid", Toast.LENGTH_SHORT).show();
                     }
