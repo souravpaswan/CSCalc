@@ -193,23 +193,31 @@ public class MainActivity extends AppCompatActivity
         buttondot.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view)
             {
-                if (val.length() < 9) {
+                if (val.length() < 9) 
+                {
                     String st = "";
                     char ch;
                     int flag = 1, c = 0;
-                    if (!textView.getText().toString().isEmpty()) {
-                        for (int i = val.length() - 1; i >= 0; i--) {
+                    
+                    if (!textView.getText().toString().isEmpty()) 
+                    {
+                        for (int i = val.length() - 1; i >= 0; i--) 
+                        {
                             ch = val.charAt(i);
-                            if (ch == '+' || ch == '−' || ch == '×' || ch == '÷' || ch == '%' || ch == '.') {
+                            if (ch == '+' || ch == '−' || ch == '×' || ch == '÷' || ch == '%' || ch == '.') 
+                            {
                                 c = 1;
                                 st = val.substring(i, val.length());
                                 break;
                             }
                         }
-                        for (int i = 0; i < st.length(); i++) {
+                        
+                        for (int i = 0; i < st.length(); i++) 
+                        {
                             if (st.charAt(i) == '.')
                                 flag = 0;
                         }
+                        
                         if (c == 1 && (st.equals("+") || st.equals("−") || st.equals("×") || st.equals("÷") || st.equals("%")))
                             flag = 0;
 
@@ -220,7 +228,9 @@ public class MainActivity extends AppCompatActivity
                             val += ".";
                             textView.setText(textView.getText() + ".");
                         }
-                    } else {
+                    } 
+                    else 
+                    {
                         val += "0.";
                         textView.setText(textView.getText() + val);
                     }
@@ -233,10 +243,12 @@ public class MainActivity extends AppCompatActivity
             {
                 if(val.length()<10)
                 {
-                    if (!textView.getText().toString().isEmpty()) {
+                    if (!textView.getText().toString().isEmpty()) 
+                    {
                         String s = textView.getText().toString();
                         char ch = s.charAt(s.length() - 1);
-                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') {
+                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') 
+                        {
                             a.add((s.length() - 1));
                             val += "+";
                             textView.setText(textView.getText() + "+");
@@ -251,10 +263,12 @@ public class MainActivity extends AppCompatActivity
             {
                 if(val.length()<10)
                 {
-                    if (!textView.getText().toString().isEmpty()) {
+                    if (!textView.getText().toString().isEmpty()) 
+                    {
                         String s = textView.getText().toString();
                         char ch = s.charAt(s.length() - 1);
-                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') {
+                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') 
+                        {
                             a.add((s.length() - 1));
                             val += "−";
                             textView.setText(textView.getText() + "−");
@@ -269,10 +283,12 @@ public class MainActivity extends AppCompatActivity
             {
                 if(val.length()<10)
                 {
-                    if (!textView.getText().toString().isEmpty()) {
+                    if (!textView.getText().toString().isEmpty()) 
+                    {
                         String s = textView.getText().toString();
                         char ch = s.charAt(s.length() - 1);
-                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') {
+                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') 
+                        {
                             a.add((s.length() - 1));
                             val += "×";
                             textView.setText(textView.getText() + "×");
@@ -287,10 +303,12 @@ public class MainActivity extends AppCompatActivity
             {
                 if(val.length()<10)
                 {
-                    if (!textView.getText().toString().isEmpty()) {
+                    if (!textView.getText().toString().isEmpty()) 
+                    {
                         String s = textView.getText().toString();
                         char ch = s.charAt(s.length() - 1);
-                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') {
+                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') 
+                        {
                             a.add((s.length() - 1));
                             val += "÷";
                             textView.setText(textView.getText() + "÷");
@@ -306,10 +324,12 @@ public class MainActivity extends AppCompatActivity
             {
                 if(val.length()<10)
                 {
-                    if (!textView.getText().toString().isEmpty()) {
+                    if (!textView.getText().toString().isEmpty()) 
+                    {
                         String s = textView.getText().toString();
                         char ch = s.charAt(s.length() - 1);
-                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') {
+                        if (ch != '+' && ch != '−' && ch != '×' && ch != '÷' && ch != '.' && ch != '%') 
+                        {
                             a.add((s.length() - 1));
                             val += "%";
                             textView.setText(textView.getText() + "%");
@@ -326,6 +346,7 @@ public class MainActivity extends AppCompatActivity
                 {
                     String s = val;
                     char ch = s.charAt(s.length() - 1);
+                    
                     if (ch == '+' || ch == '−' || ch == '%' || ch == '×' || ch == '÷' || ch=='.')
                     {
                         Toast.makeText(getApplicationContext(), "Invalid", Toast.LENGTH_SHORT).show();
@@ -339,6 +360,7 @@ public class MainActivity extends AppCompatActivity
                         for(int i=0;i<a.size()-1;i++)
                         {
                             double answ = Double.parseDouble(s.substring((int)(a.get(i)+2),(int)(a.get(i+1)+1)));
+                            
                             if(s.charAt((int) (a.get(i)+1))=='+')
                             {
                                 res+=answ;
